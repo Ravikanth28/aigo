@@ -8,6 +8,21 @@
 import { DSA_PROBLEMS } from "@/lib/lesson-content-problems";
 import { EXTRA_CONTENT } from "@/lib/lesson-content-extra";
 import { DSA_ARTICLES } from "@/lib/lesson-content-dsa";
+import { SD_FUNDAMENTALS_CONTENT } from "@/lib/lesson-content-sd-fundamentals";
+import { LLD_CONTENT } from "@/lib/lesson-content-lld";
+import { CONCURRENCY_CONTENT } from "@/lib/lesson-content-concurrency";
+import { MICROSERVICES_CONTENT } from "@/lib/lesson-content-microservices";
+import { SQL_CONTENT } from "@/lib/lesson-content-sql";
+import { BEHAVIORAL_CONTENT } from "@/lib/lesson-content-behavioral";
+import { JOB_SEARCH_CONTENT } from "@/lib/lesson-content-job-search";
+import { AI_ENGINEERING_CONTENT } from "@/lib/lesson-content-ai-engineering";
+import { ML_SYSTEM_DESIGN_CONTENT } from "@/lib/lesson-content-ml-system-design";
+import { JAVA_CONTENT } from "@/lib/lesson-content-java";
+import { PYTHON_CONTENT } from "@/lib/lesson-content-python";
+import { CPP_CONTENT } from "@/lib/lesson-content-cpp";
+import { CSHARP_CONTENT } from "@/lib/lesson-content-csharp";
+import { GO_CONTENT } from "@/lib/lesson-content-go";
+import { GIT_CONTENT } from "@/lib/lesson-content-git";
 
 export type Block =
   | { t: "h2"; text: string }
@@ -866,6 +881,21 @@ export const LESSON_CONTENT: Record<string, LessonContent> = {
   ...DSA_ARTICLES,
   ...DSA_PROBLEMS,
   ...EXTRA_CONTENT,
+  ...SD_FUNDAMENTALS_CONTENT,
+  ...LLD_CONTENT,
+  ...CONCURRENCY_CONTENT,
+  ...MICROSERVICES_CONTENT,
+  ...SQL_CONTENT,
+  ...BEHAVIORAL_CONTENT,
+  ...JOB_SEARCH_CONTENT,
+  ...AI_ENGINEERING_CONTENT,
+  ...ML_SYSTEM_DESIGN_CONTENT,
+  ...JAVA_CONTENT,
+  ...PYTHON_CONTENT,
+  ...CPP_CONTENT,
+  ...CSHARP_CONTENT,
+  ...GO_CONTENT,
+  ...GIT_CONTENT,
 };
 
 export function getLessonContent(
