@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { DifficultyBadge } from "@/components/lesson-meta";
 import { LessonSidebar } from "@/components/lesson-sidebar";
 import { LessonCompleteButton } from "@/components/lesson-complete-button";
-import { getCourse } from "@/lib/courses";
+import { COURSES, getCourse } from "@/lib/courses";
 import {
   flattenLessons,
   getLesson,
@@ -19,11 +19,11 @@ import { LessonContentView } from "@/components/lesson-content";
 
 export function generateStaticParams() {
   const params: { course: string; lesson: string }[] = [];
-  for (const courseSlug of ["dsa", "system-design"]) {
-    const rm = getRoadmap(courseSlug);
+  for (const course of COURSES) {
+    const rm = getRoadmap(course.slug);
     if (!rm) continue;
     for (const lesson of flattenLessons(rm)) {
-      params.push({ course: courseSlug, lesson: lesson.slug });
+      params.push({ course: course.slug, lesson: lesson.slug });
     }
   }
   return params;
