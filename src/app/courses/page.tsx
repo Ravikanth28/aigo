@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { COURSE_GROUPS, coursesByGroup } from "@/lib/courses";
+import { COURSE_GROUPS, coursesByGroup, GROUP_SUBTITLES } from "@/lib/courses";
 import { CourseCard } from "@/components/course-card";
 
 export const metadata: Metadata = {
@@ -27,9 +27,14 @@ export default function CoursesPage() {
           if (courses.length === 0) return null;
           return (
             <section key={group}>
-              <div className="mb-5 flex items-baseline justify-between">
-                <h2 className="text-xl font-semibold tracking-tight">{group}</h2>
-                <span className="text-sm text-muted-foreground">
+              <div className="mb-5 flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="text-xl font-semibold tracking-tight">{group}</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {GROUP_SUBTITLES[group]}
+                  </p>
+                </div>
+                <span className="shrink-0 text-sm text-muted-foreground">
                   {courses.length} course{courses.length > 1 ? "s" : ""}
                 </span>
               </div>
