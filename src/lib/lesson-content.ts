@@ -7,6 +7,7 @@
 
 import { DSA_PROBLEMS } from "@/lib/lesson-content-problems";
 import { EXTRA_CONTENT } from "@/lib/lesson-content-extra";
+import { DSA_ARTICLES } from "@/lib/lesson-content-dsa";
 
 export type Block =
   | { t: "h2"; text: string }
@@ -862,6 +863,7 @@ export const LESSON_CONTENT: Record<string, LessonContent> = {
   ...dsaGettingStarted,
   ...dsaFoundationsArticles,
   ...dsaPatternArticles,
+  ...DSA_ARTICLES,
   ...DSA_PROBLEMS,
   ...EXTRA_CONTENT,
 };
