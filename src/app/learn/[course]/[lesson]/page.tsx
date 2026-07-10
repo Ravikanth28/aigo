@@ -19,7 +19,7 @@ import { LessonContentView } from "@/components/lesson-content";
 
 export function generateStaticParams() {
   const params: { course: string; lesson: string }[] = [];
-  for (const courseSlug of ["dsa", "system-design", "dsa-patterns"]) {
+  for (const courseSlug of ["dsa", "system-design"]) {
     const rm = getRoadmap(courseSlug);
     if (!rm) continue;
     for (const lesson of flattenLessons(rm)) {
