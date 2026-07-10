@@ -147,3 +147,63 @@
   color: var(--foreground);
   font-weight: 600;
 }
+.prose-lesson :not(pre) > code {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.85em;
+  background: var(--secondary);
+  color: var(--foreground);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--border);
+}
+.prose-lesson pre {
+  margin-top: 0.75rem;
+  overflow-x: auto;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 70%, black);
+  padding: 1rem 1.1rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.prose-lesson pre code {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  color: var(--foreground);
+}
+.prose-lesson table {
+  width: 100%;
+  margin-top: 0.75rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.prose-lesson th,
+.prose-lesson td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  color: var(--muted-foreground);
+}
+.prose-lesson th {
+  background: var(--secondary);
+  color: var(--foreground);
+  font-weight: 600;
+}
+.lesson-callout {
+  margin-top: 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  background: var(--card);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.lesson-callout-tip {
+  border-left-color: var(--primary);
+}
+.lesson-callout-warn {
+  border-left-color: hsl(0 70% 55%);
+}
+.lesson-callout-note {
+  border-left-color: var(--muted-foreground);
+}

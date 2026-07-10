@@ -14,6 +14,8 @@ import {
   getRoadmap,
   type Lesson,
 } from "@/lib/roadmaps";
+import { getLessonContent } from "@/lib/lesson-content";
+import { LessonContentView } from "@/components/lesson-content";
 
 export function generateStaticParams() {
   const params: { course: string; lesson: string }[] = [];
@@ -94,7 +96,11 @@ export default async function LessonPage({
             {current.title}
           </h1>
 
-          <LessonBody lesson={current} courseTitle={meta.title} />
+          <LessonBody
+            course={course}
+            lesson={current}
+            courseTitle={meta.title}
+          />
 
           <div className="mt-10 flex items-center justify-between border-t border-border pt-6">
             <LessonCompleteButton course={course} lesson={current.slug} />
@@ -158,14 +164,21 @@ function PrevNext({
   );
 }
 
-// Authored lesson body scaffold. Structure adapts to lesson type.
+// Renders authored content when available, else a type-aware scaffold.
 function LessonBody({
+  course,
   lesson,
   courseTitle,
 }: {
+  course: string;
   lesson: Lesson;
   courseTitle: string;
 }) {
+  const content = getLessonContent(course, lesson.slug);
+  if (content) {
+    return <LessonContentView blocks={content.blocks} />;
+  }
+
   if (lesson.type === "problem") {
     return (
       <div className="prose-lesson mt-6 space-y-6">
